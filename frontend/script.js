@@ -1,6 +1,5 @@
 const apiUrl = 'http://127.0.0.1:5000/items';
 
-// Função para carregar itens via GET
 function loadItems() {
     fetch(apiUrl)
         .then(response => {
@@ -11,17 +10,16 @@ function loadItems() {
         })
         .then(data => {
             const itemList = document.getElementById('item-list');
-            itemList.innerHTML = ''; // Limpa a lista
+            itemList.innerHTML = '';
             data.forEach(item => {
                 const li = document.createElement('li');
                 li.textContent = `${item.id}: ${item.name} `;
                 
-                // Botão de deletar
                 const deleteButton = document.createElement('button');
                 deleteButton.textContent = 'Deletar';
                 deleteButton.onclick = () => deleteItem(item.id);
 
-                li.appendChild(deleteButton); // Adiciona o botão ao lado do item
+                li.appendChild(deleteButton); 
                 itemList.appendChild(li);
             });
         })
@@ -30,7 +28,6 @@ function loadItems() {
         });
 }
 
-// Função para adicionar item via POST
 function addItem() {
     const itemName = document.getElementById('new-item-name').value;
 
@@ -56,14 +53,13 @@ function addItem() {
     })
     .then(data => {
         console.log('Item adicionado:', data);
-        loadItems(); // Recarregar os itens após adicionar
+        loadItems();
     })
     .catch(error => {
         console.error('Erro ao adicionar item:', error);
     });
 }
 
-// Função para deletar item via DELETE
 function deleteItem(itemId) {
     fetch(`${apiUrl}/${itemId}`, {
         method: 'DELETE',
@@ -76,12 +72,11 @@ function deleteItem(itemId) {
     })
     .then(data => {
         console.log('Item deletado:', data);
-        loadItems(); // Recarregar os itens após deletar
+        loadItems(); 
     })
     .catch(error => {
         console.error('Erro ao deletar item:', error);
     });
 }
 
-// Carregar os itens ao carregar a página
 window.onload = loadItems;

@@ -1,0 +1,60 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1c1c1c; /* Cor escura para o fundo */
+    color: #d3d3d3; /* Cor clara para o texto */
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #107c10; /* Verde Xbox */
+}
+
+h2 {
+    color: #d3d3d3; /* Cinza claro */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul#item-list li {
+    background-color: #252525; /* Fundo cinza escuro para os itens */
+    color: #d3d3d3;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+/* Estilos para o input e botão */
+input[type="text"] {
+    padding: 10px;
+    border: 2px solid #107c10; /* Borda verde neon */
+    border-radius: 5px;
+    background-color: #1c1c1c;
+    color: #d3d3d3;
+    width: 200px;
+}
+
+button {
+    background-color: #107c10; /* Verde Xbox */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+button:hover {
+    background-color: #13a10e; /* Verde mais claro ao passar o mouse */
+}
+
+/* Estilo para o foco no input */
+input[type="text"]:focus {
+    outline: none;
+    border-color: #13a10e; /* Foco verde neon */
+}
